@@ -27,6 +27,16 @@ const getReservation = async (req, res, next) => {
   }
 };
 
+// GET /reservations/user/:userId
+const getReservationsByUser = async (req, res, next) => {
+  try {
+    const reservations = await reservationService.getReservationsByUser(req.params.userId);
+    res.json(reservations);
+  } catch (error) {
+    next(error);
+  }
+};
+
 // POST /reservations
 const createReservation = async (req, res, next) => {
   try {
@@ -70,6 +80,7 @@ const deleteReservation = async (req, res, next) => {
 module.exports = {
   getReservations,
   getReservation,
+  getReservationsByUser,
   createReservation,
   updateReservation,
   deleteReservation

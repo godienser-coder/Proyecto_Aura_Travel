@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reserva.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <title>Nueva Reserva - Aura Travel</title>
+</head>
+<body>
+    <div class="page-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-top">
+                <div class="brand-block">
+                    <span class="brand-name">Aura</span>
+                    <span class="brand-tag">Travel</span>
+                </div>
+            </div>
+            <div class="sidebar-card">
+                <p class="sidebar-title">CLIENTE</p>
+                <p id="userName" class="sidebar-user"></p>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="/page/reservas.html">Mis Reservas</a>
+                <a href="/page/nueva-reserva.html" class="active">Nueva Reserva</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Control total de tus experiencias.</p>
+                <button id="logoutBtn" class="btn btn-outline">Cerrar Sesión</button>
+            </div>
+        </aside>
+
+        <main class="page-content">
+            <button id="sidebarToggle" class="sidebar-toggle" aria-label="Abrir menú">
+                <span></span>
+            </button>
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">Cliente · Reserva</p>
+                    <h1>Nueva Reserva</h1>
+                </div>
+            </header>
+
+            <section class="dashboard-panels">
+                <div class="mini-card">
+                    <p>Estado</p>
+                    <span>Listo para reservar</span>
+                </div>
+                <div class="mini-card">
+                    <p>Velocidad</p>
+                    <span>Rápida y segura</span>
+                </div>
+            </section>
+
+            <section class="form-panel">
+                <form id="reservationForm" class="form form-wide">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="IDHabitacion">Habitación:</label>
+                            <select id="IDHabitacion" required>
+                                <option value="">Seleccione una habitación</option>
+                            </select>
+                            <div id="detalleHabitacion" class="detalle-card" style="display:none;"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="IDPaquete">Paquete:</label>
+                            <select id="IDPaquete" required>
+                                <option value="">Seleccione un paquete</option>
+                            </select>
+                            <div id="detallePaquete" class="detalle-card" style="display:none;"></div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Servicios Adicionales:</label>
+                            <div id="serviciosContainer"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="FechaInicio">Fecha de Inicio:</label>
+                            <input type="date" id="FechaInicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="FechaFinalizacion">Fecha de Finalización:</label>
+                            <input type="date" id="FechaFinalizacion" required>
+                        </div>
+                        <p id="dateAvailabilityMessage" class="field-message"></p>
+
+                        <div class="form-group">
+                            <label for="MetodoPago">Método de Pago:</label>
+                            <select id="MetodoPago" required>
+                                <option value="">Seleccione un método de pago</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="resumen resumen-right">
+                        <h3>Resumen de Pago</h3>
+                        <p>Subtotal: <span id="subtotal">$0</span></p>
+                        <p>IVA (19%): <span id="iva">$0</span></p>
+                        <p class="total-row"><strong>Total:</strong> <span id="total">$0</span></p>
+                    </div>
+
+                    <div class="actions-row">
+                        <button type="submit" class="btn">Confirmar Reserva</button>
+                        <a href="/page/reservas.html" class="btn btn-outline">Cancelar</a>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../js/nueva-reserva.js"></script>
+</body>
+</html>
